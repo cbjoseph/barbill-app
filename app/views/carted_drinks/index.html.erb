@@ -1,0 +1,17 @@
+<h1>Checkout... </h1>
+<% if current_user %>
+  <h2><%= current_user.name %> wants to purchase:</h2>
+<% end %>
+<% @carteddrinks.each_slice(3) do |three_carteddrinks| %>
+<div class= "row">
+<% three_carteddrinks.each do |carteddrink|%>
+<div class="col-md-4">
+<div class="well">
+  <p><%= carteddrink.drink.name %></p>
+  <%= link_to "Remove this product", "/carted_drinks/#{carteddrink.id}", method: :delete %>`
+  </div>
+  </div>
+  <% end %>
+</div>
+<% end %>
+<h4><a href= "/orders" data-method= "post">Buy Now!</a> </h4> 

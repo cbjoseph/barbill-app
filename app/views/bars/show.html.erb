@@ -1,0 +1,22 @@
+<%= @bar.name %>
+<h2>Drinks</h2>
+<% @drinks.each do |drink| %>
+  <%= drink.name %>
+  <%= form_tag "/carted_drinks", method: :post do %>
+  <div>
+  <p>Add Drink to Cart</p>
+    <%= label_tag :quantity %>
+    <%= text_field_tag :quantity, '', class: 'form-control' %>
+  </div>
+   <div>
+    <%= label_tag drink.name %>
+    <%= hidden_field_tag :drink_id, drink.id, class: 'form-control' %>
+  </div>
+  <div>
+  <%= submit_tag 'Add to Cart' %>
+  </div>
+  <% end %>
+<% end %>
+
+    
+
