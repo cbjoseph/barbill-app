@@ -1,0 +1,4 @@
+<% @carteddrinks.each do |carteddrink| %>
+  <%= carteddrink.drink.name %>
+ <a href= "/queue/<%=carteddrink.id%>/edit" data-method= "get">Make Drink!</a>
+<% end %>

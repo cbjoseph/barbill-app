@@ -1,0 +1,2 @@
+module QueuedDrinksHelper
+end

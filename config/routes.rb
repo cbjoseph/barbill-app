@@ -15,6 +15,17 @@ Rails.application.routes.draw do
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
 
+  get '/bartender_signup' => 'bartenders#new'
+  post '/bartenders' => 'bartenders#create'
+
+  get '/queue' => 'queued_drinks#index'
+  get '/queue/:id/edit' => 'queued_drinks#edit'
+  patch '/queue' => 'queued_drinks#update'
+
+  get '/bartender_login' => 'bartender_sessions#new'
+  post '/bartender_login' => 'bartender_sessions#create'
+  get '/bartender_logout' => 'bartender_sessions#destroy'
+
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'

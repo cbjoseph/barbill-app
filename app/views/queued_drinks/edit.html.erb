@@ -1,0 +1,13 @@
+<h1> Drink Being Made!</h1>
+<p> <%= @carteddrink.drink.name %></p>
+<!-- <a href= "/queue" data-method= "patch">Make Drink!</a> -->
+
+<%= form_tag "/queue", method: :patch do %>
+  <div>
+    <%= label_tag :id %>
+    <%= hidden_field_tag :id, @carteddrink.id, class: 'form-control'%>
+  </div>
+     <div>
+  <%= submit_tag 'Make Drink' %>
+  </div>
+  <% end %>
