@@ -47,6 +47,13 @@
 
 <body id="page-top" class="index">
 
+    <div class="loading-screen">
+        <div class="content animated fadeInDown">
+            <i class="fa fa-circle-o-notch fa-spin"></i>
+            <h2 class="section-heading">Baking the page</h2>
+            <h3 class="section-subheading">Please wait...</h3>
+        </div>
+    </div>
 
     <!-- Main Slider -->
     
@@ -69,7 +76,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     
                 <ul class="nav navbar-nav navbar-left">
-                    <li><a class="page-scroll" href="/bars/stadiums">Stadiums</a></li>
+                    <li><a class="page-scroll" href="#restaurants">Stadiums</a></li>
                     <li><a class="page-scroll" href="#menus">Menus</a></li>
                     <li><a class="page-scroll" href="#book">Book a Table</a></li>
                 </ul>
@@ -106,7 +113,71 @@
     </nav>
     <!-- End Navigation -->
     <header id="header" class="intro">
+        <div id="hero-carousel" class="carousel slide" data-ride="carousel">
 
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner">
+
+            <!-- Start slide -->
+            <div class="item active">
+                <div class="fill item_one"></div>
+                <div class="row">
+                    <div class="col-sm-8 col-sm-offset-2">
+                        <div class="slide-content animated fadeInDown">
+                            <span class="section-icon">d</span>
+                            <h1>Foodster</h1>
+                            <h2>The ultimate theme for any restaurant or bar</h2>
+                        </div>
+                    </div>
+                </div><!-- /.row -->
+            </div>
+            <!-- End slide -->
+
+            <!-- Start slide -->
+            <div class="item">
+                <div class="fill item_two"></div>
+                <div class="row">
+                    <div class="col-sm-8 col-sm-offset-2">
+                        <div class="slide-content animated fadeInDown">
+                            <span class="section-icon">f</span>
+                            <h1>Crafted by designers</h1>
+                            <h2>Coded for developers</h2>
+                        </div>
+                    </div>
+                </div><!-- /.row -->
+            </div>
+            <!-- End slide -->            
+        
+            <!-- Start slide -->
+            <div class="item">
+                <div class="fill item_three"></div>
+                <div class="row">
+                    <div class="col-sm-8 col-sm-offset-2">
+                        <div class="slide-content animated zoomIn">
+                            <span class="section-icon">x</span>
+                            <h1>Fully documented and supported</h1>
+                            <h2>All customers receive free support</h2>
+                        </div>
+                    </div>
+                </div><!-- /.row -->
+            </div>
+            <!-- End slide -->   
+
+          </div><!-- /.carousel-inner -->
+
+        <a href="#nav" class="btn page-scroll header-scroll">
+            <i class="fa fa-angle-down animated"></i>
+        </a>
+
+        <!-- Controls -->
+          <a class="left carousel-control" href="#hero-carousel" role="button" data-slide="prev">
+            <span class="fa fa-angle-left"></span>
+          </a>
+          <a class="right carousel-control" href="#hero-carousel" role="button" data-slide="next">
+            <span class="fa fa-angle-right"></span>
+          </a>
+
+        </div><!-- /#hero-carousel -->
     </header><!-- /.intro -->
 <%= yield %> 
     <!-- Introduction Section -->

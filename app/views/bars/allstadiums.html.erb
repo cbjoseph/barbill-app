@@ -1,0 +1,3 @@
+<ul> <% @bars.each do |bar| %>
+                        <li><a href="/bars/<%=bar.id%>" data-toggle="modal"><%= bar.name %></a></li>
+                        <%end%>

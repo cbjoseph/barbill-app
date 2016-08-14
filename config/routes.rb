@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get '/' => 'bars#index'
   get '/bars' => 'bars#index'
+  get '/bars/stadiums' => 'bars#just_show_stadiums'
   get '/bars/new' => 'bars#new'
   post '/bars' => 'bars#create'
   get '/bars/:id' => 'bars#show'

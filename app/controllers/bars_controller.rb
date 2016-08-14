@@ -1,7 +1,12 @@
 class BarsController < ApplicationController
   def index
     @bars = Bar.all
-    render 'index.html.erb'
+    render layout: 'homepage.html.erb'
+  end
+
+  def just_show_stadiums
+    @bars = Bar.all
+    render 'allstadiums.html.erb'
   end
 
   def new

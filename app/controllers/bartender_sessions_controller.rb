@@ -16,7 +16,7 @@ class BartenderSessionsController < ApplicationController
   end
 
   def destroy
-    session[:user_id] = nil
+    session[:bartender_id] = nil
     flash[:success] = 'Successfully logged out!'
     redirect_to '/bartender_login'
   end
