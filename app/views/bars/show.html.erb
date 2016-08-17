@@ -20,9 +20,8 @@
                             </div>
                             <h2>Drinks</h2>
 <% @drinks.each do |drink| %>
-  
+    <img src="<%= drink.img_src %>">
   <%= form_tag "/carted_drinks", method: :post do %>
-  <%= drink.img_src %>
   <div>
   <p>Add Drink to Cart</p>
     <%= label_tag :quantity %>
@@ -37,13 +36,7 @@
   </div>
   <% end %>
 <% end %>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit.
- Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue.
-  Nam tincidunt congue enim, ut porta lorem lacinia consectetur. 
-  Donec ut libero sed arcu vehicula ultricies a non tortor. 
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-  Mauris vitae nisi at sem facilisis semper ac in est.</p>
+<p>Wrigley Field</p>
                         </div>
                     </div>
                 </div>

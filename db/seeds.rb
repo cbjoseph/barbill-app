@@ -16,7 +16,7 @@ category3 = Category.create(
   name: "mixed drinks"
 )
 
-bar_names = ['Hubbard Inn', 'Mothers', 'Pink Elephant', 'Gas Light']
+bar_names = ['Wrigley Field', 'Mothers', 'Pink Elephant', 'Gas Light']
 bar_names.each do |bar_name|
   bar = Bar.create(
     name: bar_name
