@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get '/drawing' => 'bars#draw'
   get '/' => 'bars#index'
   get '/bars' => 'bars#index'
   get '/bars/stadiums' => 'bars#just_show_stadiums'
@@ -33,5 +34,6 @@ Rails.application.routes.draw do
 
   post '/orders' => 'orders#create'
   get '/orders/:id' => 'orders#show'
+  get '/orders/:id/status' => 'orders#status'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

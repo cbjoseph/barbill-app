@@ -69,23 +69,24 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     
                 <ul class="nav navbar-nav navbar-left">
+                   <li><a class="page-scroll" href="/bars">Home</a></li>
                     <li><a class="page-scroll" href="/bars/stadiums">Stadiums</a></li>
-                    <li><a class="page-scroll" href="#menus">Menus</a></li>
-                    <li><a class="page-scroll" href="#book">Book a Table</a></li>
+
                 </ul>
                      <a class="navbar-brand page-scroll" href="#header">
-                    <img src="/assets/images/barbilllogo.png" alt="">
+                    <img src="/assets/images/foodster_navigation_logo.png" alt="">
                 </a>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
-                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Your Account <span class="caret"></span></a>
+                    <% if current_user %>
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Welcome <%=current_user.name %> <span class="caret"></span></a>
+                     <% else %>
+                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Sign In! <span class="caret"></span></a>
+                     <% end %>
                       <ul class="dropdown-menu" role="menu">
                         <li><a href="/signup">Signup</a></li>
                         <li><a href="/login">Login</a></li>
                         <li><a href="/logout">Logout</a></li>
-                        <% if current_user %>
-                        <li><a href="/carted_drinks">Checkout!</a></li>
-                        <% end %>
                         <li class="divider"></li>
                         <li><a href="/bartender_signup">Billtender Signup</a></li>
                         <li><a href="/bartender_login">Billtender Login</a></li>
@@ -94,9 +95,9 @@
                         <li><a href="/queue">Drink Queue</a></li>
                         <% end %>
                       </ul>
-                    </li>
-                    <li><a class="page-scroll" href="#gallery">Gallery</a></li>
-                    <li><a class="page-scroll" href="#footer">Contact Us</a></li>
+                       <% if current_user %>
+                        <li><a href="/carted_drinks">Checkout!</a></li>
+                        <% end %>
                 </ul>
 
             </div>
@@ -122,44 +123,18 @@
 
                   <div class="col-md-3 col-sm-6 inner">
                       <h3 class="section-subheading">Who we are <span>M</span></h3>
-                      <p>Magnis modipsae voloratati andigen daepeditem quiate re porem que aut labor. Laceaque eictemperum quiae sitiorem rest non restibusaes maio es dem tumquam.</p>
-                      <a href="about.html" class="txt-btn">More about us</a>
                   </div><!-- /.col -->
                   
                   <div class="col-md-3 col-sm-6 inner">
                       <h3 class="section-subheading">Opening Times <span>X</span></h3>
-                        <p><em>Mon &ndash; Thu</em>&nbsp;&nbsp;<strong>12pm &ndash; 10:30pm</strong></p>
-                    <p><em>Fri &ndash; Sat</em>&nbsp;&nbsp;<strong>12pm &ndash; 11pm</strong></p>
-                    <p><em>Sun</em>&nbsp;&nbsp;<strong>12pm &ndash; 10:30pm</strong></p>     
-                
                   </div><!-- /.col -->
                   
                   <div class="col-md-3 col-sm-6 inner">
                       <h3 class="section-subheading">Get in Touch <span>V</span></h3>
-                      <p>Doloreiur quia commolu ptatemp dolupta oreprerum tibusam eumenis et consent accullignis dentibea autem inisita.</p>
-                      <ul class="contacts">
-                          <li><i class="icon-location contact"></i> 84 Street, City, State 24813</li>
-                          <li><i class="icon-mobile contact"></i> +00 (123) 456 78 90</li>
-                          <li><a href="#"><i class="icon-mail-1 contact"></i> info@jcthemes.com</a></li>
-                      </ul><!-- /.contacts -->
                   </div><!-- /.col -->
                   
                   <div class="col-md-3 col-sm-6 inner">
                       <h3 class="section-subheading">Dining Club <span>x</span></h3>
-                      <p>Conecus iure posae volor remped modis aut lor volor accabora incim resto explabo.</p>
-                        <div id="mc_embed_signup">
-                            <form id="newsletter" class="form-inline newsletter" role="form" action="mailchimp_code_here" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate">
-                            <div id="mc_embed_signup_scroll">
-                                <input type="email" value="" name="EMAIL" class="required email form-control input-large" id="mce-EMAIL" placeholder="Email address*" required>
-                                <div id="mce-responses" class="clear">
-                                    <div class="response hide" id="mce-error-response"></div>
-                                    <div class="response hide" id="mce-success-response"></div>
-                                </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-                                <div class="bots"><input type="hidden" name="b_d3e5ba7f28f3f616054cdc3f7_8dd74308df" tabindex="-1" value=""></div>
-                                <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn btn-default btn-block btn-submit btn-primary"></div>
-                            </div>
-                            </form>
-                        </div><!--End mc_embed_signup-->
                   </div><!-- /.col -->
                   
               </div><!-- /.row --> 

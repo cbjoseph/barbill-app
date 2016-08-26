@@ -16,7 +16,7 @@ category3 = Category.create(
   name: "mixed drinks"
 )
 
-bar_names = ['Wrigley Field', 'Mothers', 'Pink Elephant', 'Gas Light']
+bar_names = ['Wrigley Field', 'US Cellular Field', 'United Center', 'Soldier Field']
 bar_names.each do |bar_name|
   bar = Bar.create(
     name: bar_name
@@ -25,11 +25,11 @@ end
 users = User.all
 bars = Bar.all
 
-drink_names = ['Merlot', 'Pinot', 'Chardonney', 'Spritzer']
+drink_names = ['Merlot', '312 Urban Wheat', '312 Urban Pale', 'Spritzer']
 drink_names.each do |drink_name|
   drink = Drink.create(
     name: drink_name,
-    category_id: category2.id,
+    category_id: category1.id,
     bar_id: bars.sample.id
   )
 end
@@ -67,3 +67,9 @@ end
     )
 end
 puts "Done!"
+
+# http://www.ballparksofbaseball.com/wp-content/uploads/2016/03/uscell_topv2.jpg (us celullar)
+# http://static.panoramio.com/photos/original/2633922.jpg(united center)
+# http://3.bp.blogspot.com/-5ncpayJucGo/Uctg5YTbNWI/AAAAAAAAGc8/9rfVKM78PNs/s1600/Wrigley-Field-Getty-Images.jpg (wrigley)
+# http://scene7.targetimg1.com/is/image/Target/14984469?wid=450&hei=450&fmt=pjpeg 312 urban wheat
+# http://chilledmagazine.com/wp-content/uploads/2014/03/312-beer-6pack.jpg 312 urban pale

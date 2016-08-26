@@ -18,6 +18,8 @@ class CartedDrinksController < ApplicationController
   end
 
   def destroy
- 
+    @carteddrink = CartedDrink.find_by(id: params[:id])
+    @carteddrink.update(status: "removed")
+    redirect_to "/carted_drinks"
   end
 end

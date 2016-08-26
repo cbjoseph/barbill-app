@@ -1,3 +1,17 @@
 <ul> <% @bars.each do |bar| %>
-                        <li><a href="/bars/<%=bar.id%>" data-toggle="modal"><%= bar.name %></a></li>
-                        <%end%>
+<div class="container">
+  <div class="row">
+      <div class="col-lg-8 col-md-8 col-lg-offset-2 col-md-offset-2">
+          <div class="modal-body">
+                            <!-- News Article Goes Here -->
+              <h2 class="section-heading"><li><%= bar.name %></li></h2>
+              <h3 class="section-subheading"><a href="/bars/<%=bar.id%>" data-toggle="modal">Click Here for Drinks</a></h3>
+              <img class="img-responsive img-centered" src="<%= bar.img_src%>" alt="" data-no-retina>
+                            
+              <div class="map"></div>
+              <div id="restaurant_map"></div>
+          </div>
+      </div>
+  </div>
+</div>
+<% end %>

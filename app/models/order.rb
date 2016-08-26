@@ -8,7 +8,7 @@ def subtotal
   @carted_drinks = CartedDrink.where(status: "purchased", order_id: id)
   order_subtotal = 0
   @carted_drinks.each do |carted_drink|
-    order_subtotal = order_subtotal + carted_drink.drink.price
+    order_subtotal = (order_subtotal + carted_drink.drink.price) * carted_drink.quantity
   end
   return order_subtotal
 end

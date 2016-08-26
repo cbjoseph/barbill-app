@@ -1075,7 +1075,7 @@ header {
     color: #fff;
     padding: 25px 0;
     /* Change background image for #unique section here */
-    background: url('../images/unique_chain_bg.jpg') no-repeat center center scroll;
+    background: url('../images/middle_img.jpg') no-repeat center center scroll;
     background-attachment: fixed;
     @include background-cover();
     .section-heading,.section-subheading {
@@ -1127,7 +1127,7 @@ header {
     z-index: 1;
     color: #fff;
     padding: 150px 0;
-    background: url('../images/menu_bg.jpg') no-repeat center center scroll;
+    background: url('../images/middle_part.jpg') no-repeat center center scroll;
     /* background attachment fixed used for CSS parallax scrolling effect */
     background-attachment:fixed;
     @include background-cover();

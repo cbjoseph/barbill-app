@@ -27,4 +27,8 @@ class BarsController < ApplicationController
     render 'show.html.erb'
   end
 
+  def draw
+    render 'drawing.html.erb'
+  end
+
 end

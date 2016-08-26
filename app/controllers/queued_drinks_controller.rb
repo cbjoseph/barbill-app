@@ -6,6 +6,10 @@ class QueuedDrinksController < ApplicationController
 
   def edit
     @carteddrink = CartedDrink.find_by(id: params[:id])
+    @carteddrink.update(
+      id: params[:id],
+      status: "making"
+      )
     render 'edit.html.erb'
   end
 

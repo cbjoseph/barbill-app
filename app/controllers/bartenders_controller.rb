@@ -20,4 +20,6 @@ class BartendersController < ApplicationController
       redirect_to '/bartender_signup'
     end
   end
+
 end
+

@@ -935,10 +935,10 @@ header .item .slide-content h2 {
   font-size: 28px;
 }
 header .item .item_one {
-  background-image: url('../images/header_background.jpg');
+  background-image: url('../images/fan_cheering.jpg');
 }
 header .item .item_two {
-  background-image: url('../images/header_background_2.jpg');
+  background-image: url('../images/baseball-and-beer.jpg');
 }
 header .item .item_three {
   background-image: url('../images/header_background_3.jpg');
@@ -1025,7 +1025,7 @@ header .btn:hover i.animated {
   color: #fff;
   padding: 25px 0;
   /* Change background image for #unique section here */
-  background: url('../images/unique_chain_bg.jpg') no-repeat center center scroll;
+  background: url('../images/middle_img.jpg') no-repeat center center scroll;
   background-attachment: fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -1077,7 +1077,7 @@ header .btn:hover i.animated {
   z-index: 1;
   color: #fff;
   padding: 150px 0;
-  background: url('../images/menu_bg.jpg') no-repeat center center scroll;
+  background: url('../images/middle_part.jpg') no-repeat center center scroll;
   /* background attachment fixed used for CSS parallax scrolling effect */
   background-attachment: fixed;
   -webkit-background-size: cover;
@@ -1645,7 +1645,7 @@ video {
 }
 /* Menu call outs */
 #menu-one {
-  background-image: url('../images/header_background_2.jpg');
+  background-image: url('../images/baseball-and-beer.jpg');
 }
 #menu-two {
   background-image: url('../images/fastfood_2.jpg');

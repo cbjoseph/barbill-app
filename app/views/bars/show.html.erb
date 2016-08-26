@@ -1,47 +1,40 @@
   <div class="loading-screen">
-        <div class="content animated fadeInDown">
+    <div class="content animated fadeInDown">
             <i class="fa fa-circle-o-notch fa-spin"></i>
             <h2 class="section-heading">Loading drinks</h2>
             <h3 class="section-subheading">Raise a glass...</h3>
-        </div>
-        </div>
+    </div>
+  </div>
 
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-md-8 col-lg-offset-2 col-md-offset-2">
-                        <div class="modal-body">
-                            <!-- News Article Goes Here -->
-                            <h2 class="section-heading"><%= @bar.name %></h2>
-                            <h3 class="section-subheading">Stadium details</h3>
-                            <img class="img-responsive img-centered" src="/assets/images/restaurant_gallery_1.jpg" alt="" data-no-retina>
-                            
-                            <div class="map">
-                                <div id="restaurant_map"></div>
-                            </div>
-                            <h2>Drinks</h2>
-<% @drinks.each do |drink| %>
-    <img src="<%= drink.img_src %>">
-  <%= form_tag "/carted_drinks", method: :post do %>
-  <div>
-  <p>Add Drink to Cart</p>
-    <%= label_tag :quantity %>
-    <%= text_field_tag :quantity, '', class: 'form-control' %>
+
+  <h2><%= @bar.name%> Drinks</h2>
+<% @drinks.each_slice(3) do |three_drinks| %>
+  <div class="row">
+      <% three_drinks.each do |drink| %>
+        <div class="col-md-4">
+          <div class="well">
+              <img src="<%= drink.img_src %>" style="max-width:100%; height:300px">
+                <%= form_tag "/carted_drinks", method: :post do %>
+                  <div>
+                     <p>Add Drink to Cart</p>
+                      <%= label_tag :quantity %>
+                      <%= text_field_tag :quantity, '', class: 'form-control' %>
+                  </div>
+                  <div>
+                      <%= label_tag drink.name %>
+                      <%= hidden_field_tag :drink_id, drink.id, class: 'form-control' %>
+                  </div>
+                  <div>
+                    <%= submit_tag 'Add to Cart' %>
+                  </div>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
   </div>
-   <div>
-    <%= label_tag drink.name %>
-    <%= hidden_field_tag :drink_id, drink.id, class: 'form-control' %>
-  </div>
-  <div>
-  <%= submit_tag 'Add to Cart' %>
-  </div>
-  <% end %>
 <% end %>
 <p>Wrigley Field</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+                
 
  
 

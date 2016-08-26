@@ -7,9 +7,11 @@
 <% three_carteddrinks.each do |carteddrink|%>
 <div class="col-md-4">
 <div class="well">
+<img src="<%=carteddrink.drink.img_src%>"
   <p><%= carteddrink.drink.name %></p>
-  <%= link_to "Remove this product", "/carted_drinks/#{carteddrink.id}", method: :delete %>`
+  <%= link_to "Remove this product", "/carted_drinks/#{carteddrink.id}", method: :delete %>
   </div>
+  <%= link_to "Go back to all drinks!", "/bars/#{carteddrink.drink.bar_id}"%>
   </div>
   <% end %>
 </div>

@@ -5,13 +5,9 @@
 <p> Tax:<%= @order.tax %> </p>
 <p> Tip: <%= @order.tip %> </p>
 <p> Total:<%= @order.total %> </p>
-
 <% @purchases.each do |purchase| %>
-<div class="col-md-4">
-<div class="well">
 <p><%= purchase.drink.name %></p>
   <p>Quantity ordered: <%= purchase.quantity %></p>
-  
-  </div>
-  </div>
 <% end %>
+
+<h2> In the process of making...</h2>
