@@ -1,3 +1,6 @@
+<center> <img src= <%= current_bartender.bar.img_src %> style="max-width:100%; height:300px"></center>
+
+ <h2>Drinks that need to be made:  </h2>
 <% @carteddrinks.each do |carteddrink| %>
   <%= carteddrink.drink.name %>
   <img src= <%= carteddrink.drink.img_src %> style="max-width:100%; height:300px">
