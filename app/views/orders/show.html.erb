@@ -11,9 +11,9 @@
 <% end %>
 
 <h2> Order status...</h2>
-
+<div ng-app="app">
+  <div ng-controller="statusCtrl" ng-init="setup(<%=@order.id%>)">
 <div class="timeline-centered">
-
         <article class="timeline-entry">
 
             <div class="timeline-entry-inner">
@@ -30,7 +30,7 @@
 
         </article>
 
-             <article class="timeline-entry">
+             <article class="timeline-entry" ng-if="orderStatusMaking()">
 
             <div class="timeline-entry-inner">
 
@@ -49,7 +49,7 @@
 
         </article>
 
-        <article class="timeline-entry">
+        <article class="timeline-entry" ng-if="orderStatusCompleted()">
 
             <div class="timeline-entry-inner">
 
@@ -66,4 +66,6 @@
         </article>
 
     </div>
+  </div>
+</div>
 

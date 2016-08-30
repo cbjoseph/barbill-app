@@ -26,9 +26,4 @@ class OrdersController < ApplicationController
     render 'show.html.erb'
   end
 
-  def status
-    @order = Order.find_by(id: params[:id], user_id: current_user.id)
-    @purchases = CartedDrink.where(status: "making", user_id: current_user.id, order_id: @order.id)
-    render 'status.html.erb'
-  end
 end

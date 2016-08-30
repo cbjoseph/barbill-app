@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  namespace :api do
+    namespace :v1 do
+      get '/orders' => 'orders#index'
+      get '/orders/:id' => 'orders#show'
+    end
+  end
+
   get '/drawing' => 'bars#draw'
   get '/' => 'bars#index'
   get '/bars' => 'bars#index'
@@ -34,6 +41,5 @@ Rails.application.routes.draw do
 
   post '/orders' => 'orders#create'
   get '/orders/:id' => 'orders#show'
-  get '/orders/:id/status' => 'orders#status'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
