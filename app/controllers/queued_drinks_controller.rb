@@ -10,6 +10,11 @@ class QueuedDrinksController < ApplicationController
       id: params[:id],
       status: "making"
       )
+     ActionCable.server.broadcast 'activity_channel', {
+      id: @carteddrink.id,
+      order_id: @carteddrink.order_id,
+      status: @carteddrink.status
+    }
     render 'edit.html.erb'
   end
 
@@ -22,7 +27,12 @@ class QueuedDrinksController < ApplicationController
     @order = Order.find_by(id: @carteddrink.order_id)
     @order.update(
       bartender_id: current_bartender.id
-      )
-  redirect_to '/queue'
+    )
+    ActionCable.server.broadcast 'activity_channel', {
+      id: @carteddrink.id,
+      order_id: @carteddrink.order_id,
+      status: @carteddrink.status
+    }
+    redirect_to '/queue'
   end
 end

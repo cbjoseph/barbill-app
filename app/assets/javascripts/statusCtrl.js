@@ -14,6 +14,9 @@
     $scope.message = "Hello world!";
 
     $scope.orderStatusMaking = function() {
+      if (!$scope.cartedDrinks) {
+        return;
+      }
       // var status = [];
       // for (var i = 0; i < $scope.cartedDrinks.length; i++) {
       //   if ($scope.cartedDrinks[i].status !== "purchased") {
@@ -34,6 +37,10 @@
 
     };
     $scope.orderStatusCompleted = function() {
+      
+      if (!$scope.cartedDrinks) {
+        return;
+      }
       var status = [];
       for (var i = 0; i < $scope.cartedDrinks.length; i++) {
         if ($scope.cartedDrinks[i].status !== "completed") {
