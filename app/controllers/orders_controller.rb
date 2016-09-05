@@ -21,8 +21,18 @@ class OrdersController < ApplicationController
   end
 
   def show
+    @section = 165
     @order = Order.find_by(id: params[:id], user_id: current_user.id)
     @purchases = CartedDrink.where(status: "purchased", user_id: current_user.id, order_id: @order.id)
+    @pictures = [Unirest.post(
+      "https://api.ocr.space/parse/image",
+      parameters: {
+        :apikey => ENV['API_KEY'], 
+        :url => "http://www.davidhazy.com/scrapbook/tickets/images/2002_0528_baseball_giants.jpg",
+        :language => "eng",
+        isOverlayRequired: false
+      }
+    ).body]
     render 'show.html.erb'
   end
 

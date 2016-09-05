@@ -1,7 +1,6 @@
 class CartedDrinksController < ApplicationController
   before_action :authenticate_user!
   def index
-    @section = 165
     @carteddrinks = CartedDrink.all.where(status: "carted")
     render 'index.html.erb'
   end

@@ -1,3 +1,4 @@
+
 <h1>Your order info: </h1>
 <p> Email : <%= @order.user.email %> </p>
 <p>Order id: <%= @order.id %> </p>
@@ -9,6 +10,13 @@
 <p><%= purchase.drink.name %></p>
   <p>Quantity ordered: <%= purchase.quantity %></p>
 <% end %>
+
+<input type="file" accept="image/*;capture=camera">
+<% if @section < 150 %> <h2> The closest bar is on the level 100 floor in section 110 </h2> 
+<% elsif @section < 250 %> <h2> The closest bar is on the level 100 floor in section 218</h2>
+<% else @section >250 %> <h2> The closest bar is on the level 100 floor in section 304 </h2>
+<% end %>
+
 
 <h2> Order status...</h2>
 <div ng-app="app">
