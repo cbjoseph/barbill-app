@@ -35,5 +35,4 @@ class OrdersController < ApplicationController
     ).body]
     render 'show.html.erb'
   end
-
 end

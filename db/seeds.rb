@@ -25,12 +25,13 @@ end
 users = User.all
 bars = Bar.all
 
-drink_names = ['Merlot', '312 Urban Wheat', '312 Urban Pale', 'Spritzer']
+drink_names = ['Budlight', '312 Urban Wheat', '312 Urban Pale', 'Miller Lite', 'Oberon']
 drink_names.each do |drink_name|
   drink = Drink.create(
     name: drink_name,
     category_id: category1.id,
-    bar_id: bars.sample.id
+    bar_id: bars.sample.id,
+    price: 6
   )
 end
 drinks = Drink.all
@@ -71,5 +72,6 @@ puts "Done!"
 # http://www.ballparksofbaseball.com/wp-content/uploads/2016/03/uscell_topv2.jpg (us celullar)
 # http://static.panoramio.com/photos/original/2633922.jpg(united center)
 # http://3.bp.blogspot.com/-5ncpayJucGo/Uctg5YTbNWI/AAAAAAAAGc8/9rfVKM78PNs/s1600/Wrigley-Field-Getty-Images.jpg (wrigley)
+# http://sportsmockery.com/wp-content/uploads/2015/03/Soldier-Field-Outside.jpg (soldier field)
 # http://scene7.targetimg1.com/is/image/Target/14984469?wid=450&hei=450&fmt=pjpeg 312 urban wheat
 # http://chilledmagazine.com/wp-content/uploads/2014/03/312-beer-6pack.jpg 312 urban pale
