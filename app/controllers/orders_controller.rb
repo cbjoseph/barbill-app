@@ -24,6 +24,7 @@ class OrdersController < ApplicationController
     @section = 165
     @order = Order.find_by(id: params[:id], user_id: current_user.id)
     @purchases = CartedDrink.where(status: "purchased", user_id: current_user.id, order_id: @order.id)
+    @carteddrinks = CartedDrink.all
     @pictures = [Unirest.post(
       "https://api.ocr.space/parse/image",
       parameters: {
