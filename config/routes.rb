@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       get '/orders' => 'orders#index'
       get '/orders/:id' => 'orders#show'
+      get '/queue' => 'queued_drinks#index'
     end
   end
 
@@ -42,5 +43,6 @@ Rails.application.routes.draw do
 
   post '/orders' => 'orders#create'
   get '/orders/:id' => 'orders#show'
+  post '/pictures' => 'orders#pictures'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

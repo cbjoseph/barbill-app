@@ -1,4 +1,5 @@
 /* global angular */
+// require textbelt-- TextBelt.text('5614147798', 'Your drink order is ready')
 (function() {
   "use strict";
 
@@ -50,7 +51,8 @@
       if (status.length > 0) {
         return false;
       } else {
-        return true; 
+        console.log(Date.now());
+        return true;
       }
     };
   });
