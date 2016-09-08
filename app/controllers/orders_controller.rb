@@ -34,16 +34,7 @@ class OrdersController < ApplicationController
   end
 
   def pictures
-    #     @pictures = [Unirest.post(
-    #   "https://api.ocr.space/parse/image",
-    #   parameters: {
-    #     :apikey => ENV['API_KEY'], 
-    #     :file => params[:imageData],
-    #     :language => "eng",
-    #     isOverlayRequired: false
-    #   }
-    # ).body]
-    # render 'pictures.html.erb'
+ 
     data = Unirest.post(
       "https://api.ocr.space/parse/image",
       parameters: {
@@ -54,7 +45,15 @@ class OrdersController < ApplicationController
       }
     ).body
 
+    if (data['ParsedResults'][0]['ParsedText']).include?('UPPER')  
+      logic = "Looks like you're located in an Upper section, your bar will be located in section 300"
+    elsif (data['ParsedResults'][0]['ParsedText']).include?('LOWER') 
+      logic = "Looks like you're located in a Lower section, your bar will be located in section 200"
+    elsif (data['ParsedResults'][0]['ParsedText']).include?('211')
+      logic = "Looks like you're in the 200 section, your bar will be located in section 200"
+    end
 
-    render json: {data: data, test: "hello", success: true}
+
+    render json: {data: logic, test: "hello", success: true}
   end
 end

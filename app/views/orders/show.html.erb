@@ -94,7 +94,7 @@ function sendFile(fileData) {
     success: function(response) {
       if (response.success) {
         console.log('Your file was successfully uploaded!', response);
-        document.getElementById('results').innerHTML = response.data.ParsedResults[0].ParsedText;
+        document.getElementById('results').innerHTML = response.data;
       } else {
         console.log('There was an error uploading your file!');
       }
