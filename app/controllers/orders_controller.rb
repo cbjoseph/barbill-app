@@ -34,15 +34,27 @@ class OrdersController < ApplicationController
   end
 
   def pictures
-        @pictures = [Unirest.post(
+    #     @pictures = [Unirest.post(
+    #   "https://api.ocr.space/parse/image",
+    #   parameters: {
+    #     :apikey => ENV['API_KEY'], 
+    #     :file => params[:imageData],
+    #     :language => "eng",
+    #     isOverlayRequired: false
+    #   }
+    # ).body]
+    # render 'pictures.html.erb'
+    data = Unirest.post(
       "https://api.ocr.space/parse/image",
       parameters: {
         :apikey => ENV['API_KEY'], 
-        :file => params[:upload]['datafile'].tempfile,
+        :file => params[:imageData],
         :language => "eng",
         isOverlayRequired: false
       }
-    ).body]
-        render 'pictures.html.erb'
+    ).body
+
+
+    render json: {data: data, test: "hello", success: true}
   end
 end

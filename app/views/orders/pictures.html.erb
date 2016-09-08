@@ -1,3 +1,9 @@
 <% @pictures.each do |picture| %>
-<%= picture['ParsedResults'][0]['ParsedText']  %>
+<% if (picture['ParsedResults'][0]['ParsedText']).include?('UPPER')  %>
+<p>Your bar will be located in section 300</p>
+<% elsif (picture['ParsedResults'][0]['ParsedText']).include?('LOWER') %>
+<p>Your bar will be located in section 200</p>
+<% elsif (picture['ParsedResults'][0]['ParsedText']).include?('211')%>
+<p> Your bar will be located in section 200</p>
+<%end %>
 <% end %>
