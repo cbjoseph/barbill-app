@@ -25,6 +25,11 @@ class OrdersController < ApplicationController
     @order = Order.find_by(id: params[:id], user_id: current_user.id)
     @purchases = CartedDrink.where(status: "purchased", user_id: current_user.id, order_id: @order.id)
     @carteddrinks = CartedDrink.all
+    @purchases.each do |purchase|
+      ActionCable.server.broadcast 'bartender_channel', {
+      id: purchase.id
+    }
+  end
     render 'show.html.erb'
   end
 

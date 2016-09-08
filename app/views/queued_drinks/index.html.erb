@@ -4,32 +4,22 @@
 <center> <img src= <%= current_bartender.bar.img_src %> style="max-width:100%; height:300px"></center>
 
  <h2>Drinks that need to be made:  </h2>
- <table>
- <tr>
- <th> Drink Belongs to: </th>
- <th> Drink: </th>
- <th> Image </th>
- <th> Change status</th>
- </tr>
 <div ng-repeat="queueddrink in queueddrinks">
+<table>
 <tr>
+  <th>Drink Belongs to: </th>
+  <th>Drink: </th>
+  <th>Image </th>
+  <th>Change status </th>
+  </tr>
+  <tr>
 <td>{{queueddrink.user}}</td>
-<td>{{queueddrink.name}}</td>
+<td> {{queueddrink.name}}</td>
 <td><img src={{queueddrink.img}} style="max-width:50%; height:100px"></td>
-<td><a href= "/queue/ + {{queueddrink.id}} + /edit" data-method="get">Make Drink!</a></td>
+<td><a href= "/queue/{{queueddrink.id}}/edit" data-method="get">Make Drink!</a></td>
 </tr>
-</div>
 </table>
 </div>
 </div>
+</div>
 
-<!-- 
-<% @carteddrinks.each do |carteddrink| %>
- <tr>
-     <td><%= carteddrink.user.name %></td>
-   <td><%= carteddrink.drink.name %></td>
-  <td><img src= <%= carteddrink.drink.img_src %> style="max-width:50%; height:100px"></td>
- <td><a href= "/queue/<%=carteddrink.id%>/edit" data-method= "get">Make Drink!</a></td>
- </tr>
-<% end %>
-</table> -->
