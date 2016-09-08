@@ -47,12 +47,16 @@ class OrdersController < ApplicationController
 
     if (data['ParsedResults'][0]['ParsedText']).include?('UPPER')  
       logic = "Looks like you're located in an Upper section, your bar will be located in section 300"
-    elsif (data['ParsedResults'][0]['ParsedText']).include?('LOWER') 
-      logic = "Looks like you're located in a Lower section, your bar will be located in section 200"
+    elsif (data['ParsedResults'][0]['ParsedText']).include?('MEZ') 
+      logic = "Looks like you're located in the Mezzanine section, your bar will be located in section 200"
     elsif (data['ParsedResults'][0]['ParsedText']).include?('211')
       logic = "Looks like you're in the 200 section, your bar will be located in section 200"
     end
 
+    puts 'r' * 40
+    puts data
+    puts logic
+    puts 'r' * 40
 
     render json: {data: logic, test: "hello", success: true}
   end
