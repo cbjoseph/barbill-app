@@ -8,7 +8,7 @@ class BartenderSessionsController < ApplicationController
     if bartender && bartender.authenticate(params[:password])
       session[:bartender_id] = bartender.id
       flash[:success] = 'Successfully logged in!'
-      redirect_to '/queue'
+      redirect_to '/bartenders'
     else
       flash[:warning] = 'Invalid email or password!'
       redirect_to '/bartender_login'

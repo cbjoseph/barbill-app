@@ -18,7 +18,7 @@ class BartendersController < ApplicationController
     if bartender.save
       session[:bartender_id] = bartender.id
       flash[:success] = 'Successfully created account!'
-      redirect_to '/queue'
+      redirect_to '/bartenders'
     else
       flash[:warning] = 'Invalid email or password!'
       redirect_to '/bartender_signup'
