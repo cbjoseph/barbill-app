@@ -27,6 +27,7 @@ Rails.application.routes.draw do
   post '/users' => 'users#create'
 
   get '/bartender_signup' => 'bartenders#new'
+  get '/bartenders' => 'bartenders#index'
   post '/bartenders' => 'bartenders#create'
 
   get '/queue' => 'queued_drinks#index'

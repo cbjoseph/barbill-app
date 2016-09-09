@@ -3,6 +3,10 @@ class BartendersController < ApplicationController
     render 'new.html.erb'
   end
 
+  def index
+    render 'index.html.erb'
+  end
+
   def create
     bartender = Bartender.new(
       name: params[:name],
