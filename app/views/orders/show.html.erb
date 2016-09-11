@@ -1,22 +1,40 @@
+<table class="table table-striped table-hover ">
+                <thead>
+                  <tr>
+                    <th>Order #</th>
+                    <th>Email: </th>
+                    <th>Subtotal: </th>
+                    <th>Tax: </th>
+                    <th>Tip: </th>
+                    <th>Total: </th>
+                    <th>Drink: </th>
+                    <th>Quantity: </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="info">
+                    <td><strong><%= @order.id %></strong></td>
+                    <td><strong><%= @order.user.email %></strong></td>
+                    <td><strong><%= @order.subtotal %></strong></td>
+                    <td><strong><%= @order.tax %></strong></td>
+                    <td><strong><%= @order.tip %></strong></td>
+                    <td><strong><%= @order.total %></strong></td>
+                    <% @amount.each do |quant| %>
+                    <td><strong><%= quant.drink.name %></strong></td>
+                    <td><strong><%= quant.quantity %></strong></td>
+                    <% end %>
+                </tr>
+                </tbody>
+              </table>
 
-<h1>Your order info: </h1>
-<p> Email : <%= @order.user.email %> </p>
-<p>Order id: <%= @order.id %> </p>
-<p> Subtotal:<%= @order.subtotal %> </p>
-<p> Tax:<%= @order.tax %> </p>
-<p> Tip: <%= @order.tip %> </p>
-<p> Total:<%= @order.total %> </p>
-<% @purchases.each do |purchase| %>
-<p><%= purchase.drink.name %></p>
-  <p>Quantity ordered: <%= purchase.quantity %></p>
-<% end %>
 
+<h3 class="text-info">Want to know where to pick up your drink?</h3>
 
-<h1>File Upload</h1>
 <%= form_tag '/pictures', method: :post, multipart: true do %>
-<p><label for="upload_file">Select File</label>
+<div class="btn btn-info btn-lg"><p><label for="upload_file">Upload your ticket below and find out where the closest bar is!</label>
 <%= file_field 'upload', 'datafile', accept: "image/*;capture=camera" %></p>
 <% end %>
+</div>
 <div id="results"></div>
 <script>
 /* global $ */
