@@ -1,31 +1,41 @@
-<ul> <% @bars.each do |bar| %>
+
+
+<% @bars.each do |bar| %>
+<div class="jumbotron">
 <div class="container">
   <div class="row">
       <div class="col-lg-8 col-md-8 col-lg-offset-2 col-md-offset-2">
           <div class="modal-body">
                             <!-- News Article Goes Here -->
-              <h2 class="section-heading"><li><%= bar.name %></li></h2>
-              <h3 class="section-subheading"><a href="/bars/<%=bar.id%>" data-toggle="modal">Click Here for Drinks</a></h3>
+              <h1><%= bar.name %></h1>
+              <h3 class="section-subheading"><a href="/bars/<%=bar.id%>" data-toggle="modal" class="text-success">Click Here for Drinks</a></h3>
               <img class="img-responsive img-centered" src="<%= bar.img_src%>" alt="" data-no-retina>
-      
-                            
+                 <div id="map<%= bar.id %>" class="map" data-lat="<%= bar.lat %>" data-lng="<%= bar.lng %>" style="height:400px"></div>
+            <script>
+              var map;
+              var marker;
+              function initMap() {
+                $('.map').each(function() {
+                  map = new google.maps.Map(this, {
+                    center: {lat: parseFloat($(this).data("lat")), lng: parseFloat($(this).data("lng"))},
+                    zoom: 14
+                  });
+                marker = new google.maps.Marker({
+                  position: {lat: parseFloat($(this).data("lat")), lng: parseFloat($(this).data("lng"))},
+                  map: map,
+                  icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
+                  title: 'Hello World!'
+                });
+                });
+              }
+            </script>
+                
           </div>
       </div>
   </div>
 </div>
+</div>
 <% end %>
 
-    <div id="map" style="height:400px"></div>
-    <script>
-      var map;
-      function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: -34.397, lng: 150.644},
-          zoom: 8
-        });
-      }
-    </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLEAPI_KEY'] %>&callback=initMap"
-    async defer></script>
-
-
+  <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLEAPI_KEY'] %>&callback=initMap"
+            async defer></script> 
