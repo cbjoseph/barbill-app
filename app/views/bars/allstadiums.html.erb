@@ -15,21 +15,7 @@
 </div>
 <% end %>
 
-
-
-    <style>
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-      #map {
-        height: 100%;
-      }
-    </style>
-
-    <div id="map"></div>
-
+    <div id="map" style="height:400px"></div>
     <script>
       var map;
       function initMap() {
@@ -39,8 +25,7 @@
         });
       }
     </script>
-
-    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap"
+    <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLEAPI_KEY'] %>&callback=initMap"
     async defer></script>
 
 

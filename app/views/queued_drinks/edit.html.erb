@@ -1,13 +1,22 @@
-<h1> Drink Being Made!</h1>
-<p> <%= @carteddrink.drink.name %></p>
-<!-- <a href= "/queue" data-method= "patch">Make Drink!</a> -->
-
+<h1 class="text-danger"> Drink Being Made!</h1>
+<div class="panel panel-danger">
+<div class="panel-heading">
+<h3 class="panel-title"><%= @carteddrink.drink.name %></h3>
+</div>
+ <div class="panel-body">
+  <img src="/assets/images/beergif.gif" class="img-responsive img-rounded full-width" alt="">
 <%= form_tag "/queue", method: :patch do %>
   <div>
-    <%= label_tag :id %>
+    <% label_tag :id %>
     <%= hidden_field_tag :id, @carteddrink.id, class: 'form-control'%>
   </div>
      <div>
-  <%= submit_tag 'Drink done' %>
+  <%= submit_tag 'Drink done', class: "btn btn-danger btn-lg" %>
   </div>
   <% end %>
+  </div>
+  </div>
+  </div>
+
+              
+              

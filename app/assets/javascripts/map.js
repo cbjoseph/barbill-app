@@ -1,10 +1,10 @@
 
-window.onload = function() {
-    var c=document.getElementById("viewport");
-    var ctx=c.getContext("2d");
-    var img=document.getElementById("scream");
-    ctx.drawImage(img,10,10);
-};
+// window.onload = function() {
+//     var c=document.getElementById("viewport");
+//     var ctx=c.getContext("2d");
+//     var img=document.getElementById("scream");
+//     ctx.drawImage(img,10,10);
+// };
 
 
 

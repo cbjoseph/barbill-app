@@ -1,54 +1,26 @@
-<h1>Checkout... </h1>
+<h1><a href= "/orders" class="btn btn-success btn-lg" data-method= "post">Buy Now!</a> </h1>
 <% if current_user %>
   <h2><%= current_user.name %> wants to purchase:</h2>
 <% end %>
 <% @carteddrinks.each_slice(3) do |three_carteddrinks| %>
-<div class= "row">
-<% three_carteddrinks.each do |carteddrink|%>
-<div class="col-md-4">
-<div class="well">
-<img src="<%=carteddrink.drink.img_src%>"
-  <p><%= carteddrink.drink.name %></p>
-  <%= link_to "Remove this product", "/carted_drinks/#{carteddrink.id}", method: :delete %>
-  </div>
-  <%= link_to "Go back to all drinks!", "/bars/#{carteddrink.drink.bar_id}"%>
-  </div>
-  <% end %>
-</div>
-<% end %>
-<h4><a href= "/orders" data-method= "post">Buy Now!</a> </h4> 
-
-
-  <h2 class="text-info"><%= @bar.name%> Drinks</h2>
-<% @drinks.each_slice(3) do |three_drinks| %>
-  <div class="row">
-      <% three_drinks.each do |drink| %>
+  <div class= "row">
+    <% three_carteddrinks.each do |carteddrink|%>
         <div class="col-md-4">
-         
-              <div class="panel panel-info">
-                  <div class="panel-heading">
-                  <h3 class="panel-title"><%= drink.name %></h3>
-                  </div>
-                        <div class="panel-body">
-                            <img src="<%= drink.img_src %>" style="max-width:100%; height:200px">
-                              <%= form_tag "/carted_drinks", method: :post do %>
-                                <div>
-                                   <p>Add Drink to Cart</p>
-                                    <%= label_tag :quantity %>
-                                    <%= text_field_tag :quantity, '', class: 'form-control' %>
-                                </div>
-                                <div>
-                                    <%= label_tag drink.name %>
-                                    <%= hidden_field_tag :drink_id, drink.id, class: 'form-control' %>
-                                </div>
-                                <div>
-                                  <%= submit_tag 'Add to Cart' %>
-                                </div>
-                          <% end %>
-                          </div>
-            
-            </div>
+          <div class="panel panel-success">
+                         <div class="panel-heading">
+                           <h3 class="panel-title"><%= carteddrink.drink.name %></h3>
+                         </div>
+              <div class="panel-body">
+                <img src=<%=carteddrink.drink.img_src%> style="max-width:100%; height:200px">
+                  <a href="/carted_drinks/<%=carteddrink.id%>" data-method="delete" class="btn btn-success">Remove this product</a>
+                  <a href="/bars/<%=carteddrink.drink.bar_id%>" class="btn btn-success">Go back to all drinks</a>
+              </div>
           </div>
-      <% end %>
-      </div>
+        </div>
+    <% end %>
+  </div>
 <% end %>
+
+
+
+                   
