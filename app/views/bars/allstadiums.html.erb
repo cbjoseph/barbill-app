@@ -1,14 +1,14 @@
 
 
 <% @bars.each do |bar| %>
-<div class="jumbotron">
+<div class="jumbotron" style="background-color: #e6f2ff">
 <div class="container">
   <div class="row">
       <div class="col-lg-8 col-md-8 col-lg-offset-2 col-md-offset-2">
           <div class="modal-body">
                             <!-- News Article Goes Here -->
               <h1><%= bar.name %></h1>
-              <h3 class="section-subheading"><a href="/bars/<%=bar.id%>" data-toggle="modal" class="text-success">Click Here for Drinks</a></h3>
+              <h3 class="btn btn-info btn-lg"><a href="/bars/<%=bar.id%>" data-toggle="modal" style="color: white">Click Here for Drinks</a></h3>
               <img class="img-responsive img-centered" src="<%= bar.img_src%>" alt="" data-no-retina>
                  <div id="map<%= bar.id %>" class="map" data-lat="<%= bar.lat %>" data-lng="<%= bar.lng %>" style="height:400px"></div>
             <script>
