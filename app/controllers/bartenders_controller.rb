@@ -4,7 +4,7 @@ class BartendersController < ApplicationController
   end
 
   def index
-    render 'index.html.erb'
+    render layout: 'bartenderhomepage.html.erb'
   end
 
   def create

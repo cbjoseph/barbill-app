@@ -9,7 +9,7 @@ App.bartender = App.cable.subscriptions.create("BartenderChannel", {
 
   received: function(data) {
     var $scope = angular.element(document.getElementById('orderCtrl')).scope();
-    $scope.setup();
+    $scope.setup(data);
     // Called when there's incoming data on the websocket for this channel
   }
 });

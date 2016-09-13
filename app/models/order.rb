@@ -25,4 +25,19 @@ def total
   total = subtotal + tip + tax
 end
 
+
+def sendtext
+    if CartedDrink.where(status: 'completed')
+  require 'twilio-ruby'
+account_sid = ENV['ACCOUNT_SID']
+auth_token = ENV['AUTH_TOKEN']
+
+@client = Twilio::REST::Client.new account_sid, auth_token 
+@client.account.messages.create(
+  from: '+15618192956',
+  to: '+15614147798',
+  body: 'Your drink order is being made! You can head to the bar to pick it up. =)'
+)
+end
+  end
 end

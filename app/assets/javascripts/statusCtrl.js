@@ -59,6 +59,3 @@
 
 }());
 
-if (status.length === 0) {
-        console.log(Date.now());
-      }

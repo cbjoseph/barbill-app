@@ -1,3 +1,6 @@
+<h1 class="text-success">Order Created! Now just watch your status below to see when your order is made!<div class="progress progress-striped active">
+                <div class="progress-bar progress-bar-success" style="width: 100%"></div>
+              </div></h1>
 <table class="table table-striped table-hover ">
                 <thead>
                   <tr>
@@ -12,7 +15,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr class="info">
+                  <tr class="success">
                     <td><strong><%= @order.id %></strong></td>
                     <td><strong><%= @order.user.email %></strong></td>
                     <td><strong><%= @order.subtotal %></strong></td>
@@ -28,14 +31,14 @@
               </table>
 
 
-<h3 class="text-info">Want to know where to pick up your drink?</h3>
+<h3 class="text-success">Want to know where to pick up your drink?</h3>
 
 <%= form_tag '/pictures', method: :post, multipart: true do %>
-<div class="btn btn-info btn-lg"><p><label for="upload_file">Upload your ticket below and find out where the closest bar is!</label>
+<div class="btn btn-success btn-lg"><p><label for="upload_file">Upload your ticket below and find out where the closest bar is!</label>
 <%= file_field 'upload', 'datafile', accept: "image/*;capture=camera" %></p>
 <% end %>
 </div>
-<div id="results"></div>
+<h3><div id="results" class="text-success"></div></h3>
 <script>
 /* global $ */
 // Based on code from http://code.hootsuite.com/html5/ && http://rohitrox.github.io/2013/07/19/canvas-images-and-rails/
@@ -133,7 +136,7 @@ function dataURLtoBlob(dataURL) {
 </script>
 
 
-<h2> Order status...</h2>
+<h2 class="text-success"> Order status...</h2>
 <div ng-app="app">
   <div ng-controller="statusCtrl" ng-init="setup(<%=@order.id%>)" id="statusCtrl">
 <div class="timeline-centered">

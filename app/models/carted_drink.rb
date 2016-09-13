@@ -10,4 +10,6 @@ class CartedDrink < ApplicationRecord
     end
     carted_drinks
   end
+
+
 end

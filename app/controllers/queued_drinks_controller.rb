@@ -1,7 +1,7 @@
 class QueuedDrinksController < ApplicationController
+layout 'bartenderhomepage.html.erb'
   def index
     @carteddrinks = CartedDrink.find_by_bar_id(current_bartender.bar_id)
-    render 'index.html.erb'
   end
 
   def edit
@@ -33,6 +33,8 @@ class QueuedDrinksController < ApplicationController
       order_id: @carteddrink.order_id,
       status: @carteddrink.status
     }
+    @order.sendtext
+
     redirect_to '/queue'
   end
 end
