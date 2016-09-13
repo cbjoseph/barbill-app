@@ -7,13 +7,13 @@
   </div>
 
 
-  <h2 class="text-info"><%= @bar.name%> Drinks</h2>
+  <h2 class="text-success"><%= @bar.name%> Drinks</h2>
 <% @drinks.each_slice(3) do |three_drinks| %>
   <div class="row">
       <% three_drinks.each do |drink| %>
         <div class="col-md-4">
          
-              <div class="panel panel-info">
+              <div class="panel panel-success">
                   <div class="panel-heading">
                   <h3 class="panel-title"><%= drink.name %></h3>
                   </div>

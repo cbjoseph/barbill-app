@@ -1,11 +1,20 @@
-<h1>Almost done....</h1>
+<%if @carteddrinks.length == !0 %><h1>Almost done....</h1>
 <div class="progress progress-striped active">
                 <div class="progress-bar progress-bar-success" style="width: 45%"></div>
               </div>
+  
 <h2><a href= "/orders" class="btn btn-success btn-lg" data-method= "post">Buy Now!</a> </h2>
+<%end%>
 <% if current_user %>
   <h2><%= current_user.name %> wants to purchase:</h2>
 <% end %>
+<%if @carteddrinks.length == 0%>
+<h4>Oops! You don't have any drinks carted go back to your stadium's page to order..</h4>
+<%@bars.each do |bar|%>
+
+<p class="text=success"><a href="/bars/<%=bar.id%>"><%=bar.name%>'s Drinks</a></p>
+<%end%>
+<%end%>
 <% @carteddrinks.each_slice(3) do |three_carteddrinks| %>
   <div class= "row">
     <% three_carteddrinks.each do |carteddrink|%>

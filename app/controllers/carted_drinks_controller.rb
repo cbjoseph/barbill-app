@@ -1,6 +1,7 @@
 class CartedDrinksController < ApplicationController
   before_action :authenticate_user!
   def index
+    @bars = Bar.all
     @carteddrinks = CartedDrink.all.where(status: "carted")
     render 'index.html.erb'
   end
