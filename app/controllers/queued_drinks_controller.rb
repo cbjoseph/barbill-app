@@ -5,6 +5,12 @@ layout 'bartenderhomepage.html.erb'
   end
 
   def edit
+ 
+    @beerpicture = "/assets/images/beergif.gif"
+    @beerpicture1 = "/assets/images/beergif2.gif"
+    @beerpicture2 = "/assets/images/shotgif.gif"
+    @beerpictures = [@beerpicture, @beerpicture1, @beerpicture2]
+    @randompicture = @beerpictures.sample
     @carteddrink = CartedDrink.find_by(id: params[:id])
     @carteddrink.update(
       id: params[:id],

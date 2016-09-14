@@ -10,6 +10,7 @@
 <tr>
   <th>Drink Belongs to: </th>
   <th>Drink: </th>
+  <th>Amount: </th>
   <th>Image </th>
   <th>Change status </th>
   </tr>
@@ -17,6 +18,7 @@
   <tr class="success">
 <td>{{queueddrink.user}}</td>
 <td> {{queueddrink.name}}</td>
+<td>{{queueddrink.quantity}}</td>
 <td><img src={{queueddrink.img}} style="max-width:50%; height:100px"></td>
 <td><a href= "/queue/{{queueddrink.id}}/edit" data-method="get" class="btn btn-success">Make Drink!</a></td>
 </tr>

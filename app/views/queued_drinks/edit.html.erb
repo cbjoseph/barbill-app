@@ -4,7 +4,7 @@
 <h3 class="panel-title"><%= @carteddrink.drink.name %></h3>
 </div>
  <div class="panel-body">
-  <img src="/assets/images/beergif.gif" class="img-responsive img-rounded full-width" alt="">
+  <img src="<%=@randompicture%>" class="img-responsive img-rounded full-width" alt="">
 <%= form_tag "/queue", method: :patch do %>
   <div>
     <% label_tag :id %>
