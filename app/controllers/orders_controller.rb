@@ -52,10 +52,7 @@ class OrdersController < ApplicationController
       logic = "Looks like you're in the 200 section, your bar will be located in section 200"
     end
 
-    puts 'r' * 40
-    puts data
-    puts logic
-    puts 'r' * 40
+   
 
     render json: {data: logic, test: "hello", success: true}
   end

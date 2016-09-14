@@ -33,7 +33,20 @@ layout 'bartenderhomepage.html.erb'
       order_id: @carteddrink.order_id,
       status: @carteddrink.status
     }
-    @order.sendtext
+
+    should_i_send_a_text = true
+    puts "*" * 30
+    CartedDrink.find_by_bar_id(current_bartender.bar_id).each do |carteddrink|
+      p carteddrink.status
+      unless carteddrink.status == "completed"
+        should_i_send_a_text = false
+        break
+      end
+    end
+    if should_i_send_a_text
+      @order.sendtext
+    end
+    puts "*" * 30
 
     redirect_to '/queue'
   end
