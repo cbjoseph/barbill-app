@@ -1,5 +1,5 @@
 
-
+<div style="padding-top: 30px"></div>
 <% @bars.each do |bar| %>
 <div class="jumbotron">
 <div class="container">
@@ -9,6 +9,7 @@
                             <!-- News Article Goes Here -->
               <h1 style="color: #2eb82e"><%= bar.name %></h1>
               <h3 class="btn btn-success btn-lg"><a href="/bars/<%=bar.id%>" data-toggle="modal" style="color: white">Click Here for Drinks</a></h3>
+              <div style="padding-bottom: 20px"></div>
               <img class="img-responsive img-centered" src="<%= bar.img_src%>" alt="" data-no-retina>
                  <div id="map<%= bar.id %>" class="map" data-lat="<%= bar.lat %>" data-lng="<%= bar.lng %>" style="height:400px"></div>
             <script>
