@@ -4,6 +4,7 @@ class BartendersController < ApplicationController
   end
 
   def index
+    @orders = Order.where(bartender_id: current_bartender.id)
     render layout: 'bartenderhomepage.html.erb'
   end
 

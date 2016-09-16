@@ -1,7 +1,7 @@
 
-<h2>Amount of drink's ordered the past month:  </h2>
+<h2>Amount of drink's ordered since <%= @orders.first.created_at.strftime("%b-%e-%y")%> :  </h2>
 <div>
-<%= line_chart Order.group_by_day(:created_at).count, 
+<%= line_chart @orders.group_by_day(:created_at).count, 
 xtitle: "Days", 
 ytitle: "# of Drink Orders", 
 colors: ["pink", "#999"] %>

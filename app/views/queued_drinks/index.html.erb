@@ -2,8 +2,8 @@
 <div ng-controller="orderCtrl" ng-init="setup()" id="orderCtrl">
   
 <center> <img src= <%= current_bartender.bar.img_src %> style="max-width:100%; height:300px"></center>
-
  <h2>Drinks that need to be made:  </h2>
+ <div ng-if="queueddrinks == false"><h2 class="text-danger">No drink orders are currently in the queue</p></div>
 <div ng-repeat="queueddrink in queueddrinks">
 <table class="table table-striped table-hover">
 <thead>
@@ -26,6 +26,3 @@
 </div>
 </div>
 </div>
-
-
-    

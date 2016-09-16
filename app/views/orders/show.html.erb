@@ -11,7 +11,9 @@
                     <th>Tip: </th>
                     <th>Total: </th>
                     <th>Drink: </th>
-                    <th>Quantity: </th>
+                    <th >Quantity: </th>
+                    <th></th>
+                    <th></th>
                   </tr>
                 </thead>
                 <tbody>
@@ -22,10 +24,16 @@
                     <td><strong><%= @order.tax %></strong></td>
                     <td><strong><%= @order.tip %></strong></td>
                     <td><strong><%= @order.total %></strong></td>
-                    <% @amount.each do |quant| %>
-                    <td><strong><%= quant.drink.name %></strong></td>
-                    <td><strong><%= quant.quantity %></strong></td>
-                    <% end %>
+                    <td>
+                      <% @amount.each do |quant| %>
+                        <p><strong><%= quant.drink.name %></strong><p>
+                      <% end %>
+                    <td>
+                    <td>
+                      <% @amount.each do |quant| %>
+                        <p><strong><%= quant.quantity %></strong><p>
+                      <% end %>
+                    <td>
                 </tr>
                 </tbody>
               </table>
